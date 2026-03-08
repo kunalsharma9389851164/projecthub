@@ -1,0 +1,39 @@
+```html id="loader_code"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <title>Loading Spinner</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d1117;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 8px solid #ccc;
+      border-top: 8px solid #58a6ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
+```

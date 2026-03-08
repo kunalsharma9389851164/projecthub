@@ -1,0 +1,82 @@
+```html id="calc_code"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d1117;
+    }
+
+    .calc {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    button {
+      width: 23%;
+      padding: 10px;
+      margin: 1%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calc">
+  <input type="text" id="result" disabled>
+
+  <button onclick="add('7')">7</button>
+  <button onclick="add('8')">8</button>
+  <button onclick="add('9')">9</button>
+  <button onclick="add('/')">/</button>
+
+  <button onclick="add('4')">4</button>
+  <button onclick="add('5')">5</button>
+  <button onclick="add('6')">6</button>
+  <button onclick="add('*')">*</button>
+
+  <button onclick="add('1')">1</button>
+  <button onclick="add('2')">2</button>
+  <button onclick="add('3')">3</button>
+  <button onclick="add('-')">-</button>
+
+  <button onclick="add('0')">0</button>
+  <button onclick="clearResult()">C</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="add('+')">+</button>
+</div>
+
+<script>
+function add(value) {
+  document.getElementById("result").value += value;
+}
+
+function clearResult() {
+  document.getElementById("result").value = "";
+}
+
+function calculate() {
+  let result = document.getElementById("result").value;
+  document.getElementById("result").value = eval(result);
+}
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>
+```

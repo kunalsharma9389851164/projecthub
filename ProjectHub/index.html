@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="js/script.js"></script>
+<body>
+
+  <!-- Navbar -->
+ <nav class="navbar">
+  <h1>Project Hub</h1>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="html.html">HTML</a></li>
+    <li><a href="css.html">CSS</a></li>
+    <li><a href="js.html">JS</a></li>
+  </ul>
+
+  <button onclick="toggleTheme()" id="themeBtn">🌙</button>
+</nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Frontend Project Hub</h2>
+    <input type="text" id="search" placeholder="Search projects..." onkeyup="searchProjects()">
+    <p>Explore HTML, CSS and JavaScript projects with live demos.</p>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Categories</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>HTML Projects</h3>
+        <p>Forms, Resume, Layouts</p>
+        <a href="html.html">Explore</a>
+      </div>
+
+      <div class="card">
+        <h3>CSS Projects</h3>
+        <p>Animations, Cards, Effects</p>
+        <a href="css.html">Explore</a>
+      </div>
+
+      <div class="card">
+        <h3>JavaScript Projects</h3>
+        <p>Apps, Games, Tools</p>
+        <a href="js.html">Explore</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="featured">
+    <h2>Featured Projects</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>Calculator</h3>
+        <p>Built using HTML, CSS, JS</p>
+      </div>
+
+      <div class="card">
+        <h3>To-Do List</h3>
+        <p>Manage tasks using JavaScript</p>
+      </div>
+
+      <div class="card">
+        <h3>Animated Button</h3>
+        <p>Cool hover effect with CSS</p>
+      </div>
+
+    </div>
+  </section>
+<script src="js/script.js"></script>
+</body>
+</html>
+

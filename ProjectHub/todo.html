@@ -1,0 +1,51 @@
+```html id="todo_code"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #0d1117;
+      color: white;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px;
+      margin-left: 5px;
+    }
+
+    li {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+
+<input type="text" id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+function addTask() {
+  let task = document.getElementById("task").value;
+  let li = document.createElement("li");
+  li.textContent = task;
+  document.getElementById("list").appendChild(li);
+  document.getElementById("task").value = "";
+}
+</script>
+
+</body>
+</html>
+```

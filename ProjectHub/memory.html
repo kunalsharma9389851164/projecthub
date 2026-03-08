@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory Card Game</title>
+
+<style>
+body {
+  background: #0d1117;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.game {
+  width: 400px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card {
+  height: 80px;
+  background: #161b22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.card.flipped {
+  background: #58a6ff;
+}
+</style>
+</head>
+<body>
+
+<h1>Memory Card Game</h1>
+<p id="status"></p>
+
+<div class="game" id="gameBoard"></div>
+
+<script>
+const symbols = ["🍎","🍌","🍇","🍓","🍎","🍌","🍇","🍓"];
+let flippedCards = [];
+let matched = 0;
+
+symbols.sort(() => 0.5 - Math.random());
+
+const board = document.getElementById("gameBoard");
+
+symbols.forEach(symbol => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.dataset.symbol = symbol;
+  card.innerHTML = "?";
+
+  card.addEventListener("click", function() {
+    if (flippedCards.length < 2 && !card.classList.contains("flipped")) {
+      card.classList.add("flipped");
+      card.innerHTML = symbol;
+      flippedCards.push(card);
+
+      if (flippedCards.length === 2) {
+        setTimeout(checkMatch, 800);
+      }
+    }
+  });
+
+  board.appendChild(card);
+});
+
+function checkMatch() {
+  const [card1, card2] = flippedCards;
+
+  if (card1.dataset.symbol === card2.dataset.symbol) {
+    matched += 2;
+    if (matched === symbols.length) {
+      document.getElementById("status").textContent = "🎉 You Won!";
+    }
+  } else {
+    card1.classList.remove("flipped");
+    card2.classList.remove("flipped");
+    card1.innerHTML = "?";
+    card2.innerHTML = "?";
+  }
+
+  flippedCards = [];
+}
+</script>
+
+</body>
+</html>
+
